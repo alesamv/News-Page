@@ -1,9 +1,8 @@
 /* Global styles */
-body{
+body {
     margin:0;
     padding: 0;
     font-family: 'Poppins';
-    /* font-size: 16px; */
 }
 
 h1 {
@@ -15,7 +14,7 @@ a{
 }
 
 /* Header */
-#intro{
+#intro {
     background: url(../img/tech-daily.jpg);
     text-align: center;
     height: 50vh;
@@ -25,15 +24,14 @@ a{
     background-position: 57% 48%;
 }
 
-#intro h1{
-    font-family: 'Playfair Display';
+#intro h1 {
     font-size: 72px;
     color: #ffffff;
     font-weight: normal;
     padding-top: 60px;
 }
 
-#intro p{
+#intro p {
     color: #bfbfbf;
     font-size: 18px;
     line-height: 36px;
@@ -41,111 +39,162 @@ a{
     margin: auto;
 }
 
-.container{
+.container { 
     width: 90%;
     max-width: 1280px;
     margin: auto;
 }
 
-#intro .refresh{
+#intro #refresh {
     color: #ffffff;
     border: 1px solid #ffffff;
-    padding: 9px;
+    border-radius: 2px;
+    padding: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
     background: transparent;
+    font-size: 14px;
 }
 
-#intro .btn{
-    margin-top: 50px;
+#intro .btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
-#intro .btn a{
-    margin-right: 20px;
-    padding: 9px 23px;
-}
-
 
 /* News Section */
-.news {
+.news-container {
 	display: flex;
 	flex-wrap: wrap;
     justify-content: center;
 }
 
-.new {
+.new-card {
     display: flex;
     flex-direction: column;
-	width: 500px;
+	width: 300px;
 	margin: 15px;
-	padding: 15px;
+	padding: 10px;
 	border: 1px solid rgb(170, 170, 170);
     border-radius: 4px;
-    position: relative;
-}
-
-.new h2 {
-    text-align: left;
+    box-shadow: 0px 0px 2px 1px #bfbfbf
 }
 
 img {
-	width: 500px;
-    height: 300px;
+	width: 300px;
+    height: 150px;
     border-radius: 4px;
 }
 
-.new h3, h4 {
-    text-align: end;
-    font-style: italic;
-    font-size: 16px;
+.new-card .data {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: -10px;
+    margin-bottom: -20px;
+    color: #bfbfbf;
 }
 
-.new h4 {
+.new-card h3, h4 {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.new-card h4 {
     font-size: 13px;
 }
 
-.new .data {
-    display: flex;
-    justify-content: space-between;
+.new-card h2 {
+    text-align: left;
+    font-size: 18px;
+    color:#004153
 }
 
-.new p {
+.new-card p {
     text-align: justify;
-    margin-bottom: 80px;
+    font-size: 13px;
 }
-
-.new .btn .btn-new{
-    padding: 9px 20px;
-    background: transparent;
-    border: 1px solid #086830;
-    color: #086830;
-    margin: 20px;
-}
-
-.new .btn {
-    position: absolute; 
-    right: 20px; 
-    bottom: 20px;
-    margin: 20px;
-}
-
-
-
 
 /* Media Queries */
-@media screen and (max-width: 800px) {
+/* Tablet */
+@media (max-width: 750px) {
     #intro {
-        margin-top: -35px;
+        margin-top: -43px;
+        height: 40vh;
     }
 
     #intro h1{
-        font-size: 37px;
+        font-size: 50px;
     }
 
     #intro p{
         color: #bfbfbf;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 29px;
         width: 100%;
         margin: auto;
+        margin-bottom: 20px;
     }
+
+    #intro .btn {
+        margin: auto;
+    }
+
+    .new-card {
+        width: 270px;
+    }
+
+    .new-card img {
+        width: 270px;
+    }
+
+    .new-card h2 {
+        font-size: 16px;
+    }
+    .new-card h3, .new-card h4 {
+        font-size: 12px;
+    }
+
+    .new-card p {
+        font-size: 12px;
+    }
+
 }
 
+/* Celular */
+@media (max-width: 550px) {
+    #intro {
+        margin-top: -43px;
+        height: 30vh;
+    }
+
+    #intro h1{
+        font-size: 30px;
+    }
+
+    #intro p{
+        color: #bfbfbf;
+        font-size: 12px;
+        line-height: 29px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    #intro #refresh {
+        font-size: 12px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    .new-card {
+        width: 250px;
+    }
+
+    .new-card img {
+        width: 250px;
+    }
+}
