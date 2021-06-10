@@ -1,10 +1,18 @@
+//Author: Monroy Velázquez Alejandra Sarahí
 
 //Calling to principal function to show the news in the page for the first time
 retrieve()
 
-var cont = 0; //Counter to control the alert
-var rf = document.getElementById("refresh"); //Get the button
+const rf = document.getElementById("refresh"); //Get the button
 rf.addEventListener("click", retrieve); //Event to the button to refresh the news
+
+//Clean the cards news
+function cleanHTML(){
+    const containerNews = document.querySelector('.news-container');
+    while(containerNews.firstChild) {
+        containerNews.removeChild(containerNews.firstChild);
+    }
+}
 
 //Get the actual date in milliseconds
 function date() {
@@ -16,15 +24,12 @@ function date() {
 
 //Get the news from the api and show in the page
 function retrieve(){
-    //Counter to show the alert
-    cont += 1;
-    if (cont > 0) {
-        alert("The list has been updated");
-    }
+    //Clean the data to show the news
+    cleanHTML();
 
     //Url to connect to api
     const url = 'https://newsapi.org/v2/everything?' +
-                'q=coronavirus&' +
+                'q=digital-economy&' +
                 'apiKey=d56e63af081f44c9ac43b3bc5a59619a';
 
     //Request the data from the api
@@ -36,7 +41,7 @@ function retrieve(){
             const newsCardContainer = document.querySelector(".news-container")
             info.articles.forEach((infoNewCard) => {
 
-                date(); //actual date
+                actualDate = date(); //actual date
                 //Get the substring that corresponds to the date of the news in milliseconds
                 var subString = new Date(infoNewCard.publishedAt.substring(0,10)).getTime();
                 var diff = (actualDate - subString); //Get the diference between the dates
